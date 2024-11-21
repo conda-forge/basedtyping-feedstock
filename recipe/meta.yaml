@@ -1,5 +1,5 @@
 {% set name = "basedtyping" %}
-{% set version = "0.1.9" %}
+{% set version = "0.1.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/basedtyping-{{ version }}.tar.gz
-  sha256: d92ac27144bd7e00d20c9302e8863263d6c7fc42997604ca047c8108827f2f60
+  sha256: d7600917ec9f232c9eb4266916c2ea5a4719ffca59fb7902fc96fd59a4678110
 
 build:
   noarch: python
