@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/basedtyping-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/basedtyping-{{ version }}.tar.gz
   sha256: d7600917ec9f232c9eb4266916c2ea5a4719ffca59fb7902fc96fd59a4678110
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
-    - python >=3.8,<4.0
+    - python {{ python_min }}
     - poetry-core >=1.0.8
     - pip
   run:
-    - python >=3.8,<4.0.0
+    - python >={{ python_min }},<4.0.0
     - typing-extensions >=4.1.0
     - mypy_extensions >=1.0.0
     - tomli >=1.1.0
@@ -32,6 +32,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   summary: Utilities for basedmypy
