@@ -35,13 +35,6 @@ tests:
         - basedtyping
       pip_check: true
       python_version: ${{ python_min }}.*
-  - requirements:
-      run:
-        - pip
-        - python ${{ python_min }}.*
-    script:
-      - pip check
-
 about:
   summary: Utilities for basedmypy
   description: It's recommended to use basedmypy when using basedtyping, as there are specialised adaptations made to basedmypy to support some functionality of this package.
